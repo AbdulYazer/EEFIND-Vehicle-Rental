@@ -54,12 +54,15 @@ class HomePage extends StatelessWidget {
         selectedItemColor: Colors.orange,
         selectedBackgroundColor: Colors.transparent,
         currentIndex: 0,
-            items: [
-              FloatingNavbarItem(icon: Icons.home_outlined, title: 'Home'),
-              FloatingNavbarItem(icon: Icons.garage_outlined, title: 'Garage'),
-              FloatingNavbarItem(icon: Icons.calendar_month_outlined, title: 'Bookings'),
-              FloatingNavbarItem(icon: Icons.auto_graph_outlined, title: 'Earnings'),
-            ], onTap: (int val) {  },
+        items: [
+          FloatingNavbarItem(icon: Icons.home_outlined, title: 'Home'),
+          FloatingNavbarItem(icon: Icons.garage_outlined, title: 'Garage'),
+          FloatingNavbarItem(
+              icon: Icons.calendar_month_outlined, title: 'Bookings'),
+          FloatingNavbarItem(
+              icon: Icons.auto_graph_outlined, title: 'Earnings'),
+        ],
+        onTap: (int val) {},
       ),
       body: ListView(
         children: [
@@ -91,10 +94,7 @@ class LastHomeSection extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Trending Places',
-            style: textHeading1
-          ),
+          const Text('Trending Places', style: textHeading1),
           const Text('Book now for the best experiences!'),
           const SizedBox(
             height: 10,
@@ -102,7 +102,15 @@ class LastHomeSection extends StatelessWidget {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: List.generate(5, (index) => const TrendingCard(margin: 10,)),
+              children: List.generate(
+                5,
+                (index) => InkWell(
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ListingScreen())),
+                  child: const TrendingCard(
+                    margin: 10,
+                  ),
+                ),
+              ),
               // [
               //   TrendingCard(),
               // ],
@@ -166,16 +174,21 @@ class FirstHomeSection extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               border: Border.all(color: Colors.grey[300]!),
             ),
-            child: ListTile(
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ListingScreen())),
-              contentPadding: const EdgeInsets.only(left: 10, right: 10),
-              title: const Text('Current Location',style: TextStyle(fontWeight: FontWeight.w500),),
-              subtitle: const Text('Turn on your device\'s GPS',style: TextStyle(fontSize: 14),),
-              leading: const Icon(
+            child: const ListTile(
+              contentPadding: EdgeInsets.only(left: 10, right: 10),
+              title: Text(
+                'Current Location',
+                style: TextStyle(fontWeight: FontWeight.w500),
+              ),
+              subtitle: Text(
+                'Turn on your device\'s GPS',
+                style: TextStyle(fontSize: 14),
+              ),
+              leading: Icon(
                 Icons.location_on,
                 color: Colors.orange,
               ),
-              trailing: const Icon(
+              trailing: Icon(
                 Icons.arrow_forward_ios,
                 color: Colors.grey,
               ),
@@ -189,7 +202,8 @@ class FirstHomeSection extends StatelessWidget {
 
 class TrendingCard extends StatelessWidget {
   const TrendingCard({
-    super.key,required this.margin,
+    super.key,
+    required this.margin,
   });
   final double margin;
   @override
@@ -206,8 +220,7 @@ class TrendingCard extends StatelessWidget {
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15)),
                 image: DecorationImage(
-                    image: AssetImage(
-                        'assets/images/Camellia.png'),
+                    image: AssetImage('assets/images/Camellia.png'),
                     fit: BoxFit.cover)),
             height: 180,
             width: 230,
@@ -225,34 +238,55 @@ class TrendingCard extends StatelessWidget {
                         ),
                       )),
                   Positioned(
-                    bottom: 0,
+                      bottom: 0,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text('The Camellia',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18),),
-                      const Text('14th Avn, Near by Mg Street Bangalore',style: TextStyle(color: Colors.white,fontSize: 12),),
-                      Container(
-                        padding: const EdgeInsets.only(left:3,right: 3),
-                        width: 80,
-                        decoration: BoxDecoration(
-                          color: const Color.fromRGBO(255, 255, 255, 0.16),
-                          borderRadius: BorderRadius.circular(5),
-                          border: Border.all(color: Colors.grey[700]!)
-                        ),
-                        
-                        child: const Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Icon(Icons.star,color: Colors.orange,size: 18,),
-                            SizedBox(height: 5,),
-                            Text('4.5',style: TextStyle(fontWeight: FontWeight.w500,color: Colors.white),),
-                            Text('(83)',style: TextStyle(color: Colors.grey),)
-                          ],
-                        ),
-                      )
-    
-                    ],
-                  ))
+                        children: [
+                          const Text(
+                            'The Camellia',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 18),
+                          ),
+                          const Text(
+                            '14th Avn, Near by Mg Street Bangalore',
+                            style: TextStyle(color: Colors.white, fontSize: 12),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.only(left: 3, right: 3),
+                            width: 80,
+                            decoration: BoxDecoration(
+                                color:
+                                    const Color.fromRGBO(255, 255, 255, 0.16),
+                                borderRadius: BorderRadius.circular(5),
+                                border: Border.all(color: Colors.grey[700]!)),
+                            child: const Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.orange,
+                                  size: 18,
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  '4.5',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white),
+                                ),
+                                Text(
+                                  '(83)',
+                                  style: TextStyle(color: Colors.grey),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ))
                 ],
               ),
             ),
@@ -261,7 +295,10 @@ class TrendingCard extends StatelessWidget {
             padding: EdgeInsets.all(15),
             child: Row(
               children: [
-                Text('₹11,499',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+                Text(
+                  '₹11,499',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                ),
                 Text(' / night')
               ],
             ),
