@@ -41,18 +41,19 @@ class HotelScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      bottomSheet: 
-      const BottomSheetWidget(),
+      bottomSheet: const BottomSheetWidget(),
       appBar: AppBar(
         toolbarHeight: 0,
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
-          children: [
+          children: const [
             FirstSection(),
             SecondSection(),
             LastSection(),
-            SizedBox(height: 100,)
+            SizedBox(
+              height: 100,
+            )
           ],
         ),
       ),
@@ -68,40 +69,50 @@ class BottomSheetWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        shape: BoxShape.rectangle),
+      decoration:
+          const BoxDecoration(color: Colors.white, shape: BoxShape.rectangle),
       height: 125,
       width: double.infinity,
       child: Column(
         children: [
           const Divider(),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
-                  children: [
-                    Text('₹7000 ',style: textHeading2,),
+                  children: const [
+                    Text(
+                      '₹7000 ',
+                      style: textHeading2,
+                    ),
                     Text('/night')
                   ],
                 ),
-                Text('(4th - 6th april)',style: TextStyle(fontSize: 16),)
+                const Text(
+                  '(4th - 6th april)',
+                  style: TextStyle(fontSize: 16),
+                )
               ],
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(15),
             child: Container(
-                    height: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.orange
-                    ),
-                    child: const Center(
-                      child: Text('Reserve the place',style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),
-                    )),
+                height: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.orange),
+                child: const Center(
+                  child: Text(
+                    'Reserve the place',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
+                )),
           ),
         ],
       ),
@@ -211,8 +222,7 @@ class LastSection extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     image: const DecorationImage(
-                        image: AssetImage(
-                            'assets/images/googlemapImage.png'),
+                        image: AssetImage('assets/images/googlemapImage.png'),
                         fit: BoxFit.cover),
                   ),
                   child: Stack(
@@ -224,16 +234,14 @@ class LastSection extends StatelessWidget {
                             height: 50,
                             width: 200,
                             decoration: BoxDecoration(
-                                color:
-                                    const Color.fromRGBO(50, 52, 62, 1),
+                                color: const Color.fromRGBO(50, 52, 62, 1),
                                 borderRadius: BorderRadius.circular(5)),
                             child: Column(
                               children: [
                                 Text(
                                   'Approx Location on Map',
                                   style: textHeading2.copyWith(
-                                      color: Colors.white,
-                                      fontSize: 16),
+                                      color: Colors.white, fontSize: 16),
                                 ),
                                 const Text(
                                   'Current location',
@@ -251,8 +259,8 @@ class LastSection extends StatelessWidget {
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(5)),
-                            child: const Row(
-                              children: [
+                            child: Row(
+                              children: const [
                                 Icon(
                                   Icons.location_on_outlined,
                                   color: Colors.orange,
@@ -306,12 +314,11 @@ class LastSection extends StatelessWidget {
                       borderRadius: BorderRadius.circular(35),
                       color: Colors.white,
                       border: Border.all(color: Colors.grey[300]!)),
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Row(
-                        mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
-                        children: [
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
                           Text('25 July  -  27 July  1 guest'),
                           Text(
                             'Change',
@@ -325,11 +332,11 @@ class LastSection extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                const Row(
+                Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.home_work_outlined,
                       size: 30,
                     ),
@@ -337,7 +344,7 @@ class LastSection extends StatelessWidget {
                       width: 270,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                        children: const [
                           Text(
                             'Cancellation policy',
                             style: textHeading2,
@@ -357,11 +364,11 @@ class LastSection extends StatelessWidget {
                 const SizedBox(
                   height: 15,
                 ),
-                const Row(
+                Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.access_time_outlined,
                       size: 30,
                     ),
@@ -369,7 +376,7 @@ class LastSection extends StatelessWidget {
                       width: 270,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                        children: const [
                           Text(
                             'House rules',
                             style: textHeading2,
@@ -379,10 +386,12 @@ class LastSection extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Icon(Icons.keyboard_arrow_right)
+                    const Icon(Icons.keyboard_arrow_right)
                   ],
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(
+                  height: 20,
+                ),
               ],
             ),
           )
@@ -507,17 +516,17 @@ class SecondSection extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const Row(
+            Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(
+                const Icon(
                   Icons.home_work_outlined,
                   size: 30,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: const [
                     Text(
                       'Hassle free check-in',
                       style: textHeading2,
@@ -532,17 +541,17 @@ class SecondSection extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-            const Row(
+            Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(
+                const Icon(
                   Icons.access_time_outlined,
                   size: 30,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: const [
                     Text(
                       '24x7 power backup',
                       style: textHeading2,
@@ -580,10 +589,10 @@ class FirstSection extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         child: Stack(
           children: [
-            const Positioned(
+            Positioned(
                 right: 0,
                 child: Row(
-                  children: [
+                  children: const [
                     Icon(
                       Icons.favorite_border,
                       color: Colors.grey,
@@ -625,9 +634,9 @@ class FirstSection extends StatelessWidget {
                               color: const Color.fromRGBO(255, 255, 255, 0.16),
                               borderRadius: BorderRadius.circular(5),
                               border: Border.all(color: Colors.grey[700]!)),
-                          child: const Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
+                            children: const [
                               Icon(
                                 Icons.star,
                                 color: Colors.orange,
@@ -659,9 +668,9 @@ class FirstSection extends StatelessWidget {
                               color: const Color.fromRGBO(255, 255, 255, 0.16),
                               borderRadius: BorderRadius.circular(5),
                               border: Border.all(color: Colors.grey[700]!)),
-                          child: const Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
+                            children: const [
                               Icon(
                                 Icons.location_on,
                                 color: Colors.orange,
@@ -722,17 +731,17 @@ class BedsCard extends StatelessWidget {
               width: 230,
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(15),
+          Padding(
+            padding: const EdgeInsets.all(15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Deluxe Room', style: textHeading2),
-                Text(
+                const Text('Deluxe Room', style: textHeading2),
+                const Text(
                   '132 sqft • Max 2 Adult with 1 child',
                   style: TextStyle(fontSize: 12),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 Row(
@@ -741,7 +750,7 @@ class BedsCard extends StatelessWidget {
                       width: 100,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
+                        children: const [
                           Icon(
                             Icons.tv,
                             size: 18,
@@ -757,10 +766,10 @@ class BedsCard extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 40,
                     ),
-                    Text('+8 more')
+                    const Text('+8 more')
                   ],
                 ),
               ],

@@ -105,7 +105,8 @@ class LastHomeSection extends StatelessWidget {
               children: List.generate(
                 5,
                 (index) => InkWell(
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ListingScreen())),
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const ListingScreen())),
                   child: const TrendingCard(
                     margin: 10,
                   ),
@@ -144,25 +145,23 @@ class FirstHomeSection extends StatelessWidget {
             ),
             shrinkWrap: true,
             itemBuilder: (context, index) {
-              return Container(
-                child: Column(
-                  children: [
-                    Container(
-                      height: 80,
-                      width: 80,
-                      decoration: BoxDecoration(
-                          color: cardColors[index],
-                          borderRadius: BorderRadius.circular(15),
-                          image: DecorationImage(
-                              image: AssetImage(placesImgUrl[index]),
-                              fit: BoxFit.cover)),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Text(placesName[index]),
-                  ],
-                ),
+              return Column(
+                children: [
+                  Container(
+                    height: 80,
+                    width: 80,
+                    decoration: BoxDecoration(
+                        color: cardColors[index],
+                        borderRadius: BorderRadius.circular(15),
+                        image: DecorationImage(
+                            image: AssetImage(placesImgUrl[index]),
+                            fit: BoxFit.cover)),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(placesName[index]),
+                ],
               );
             },
           ),
@@ -261,9 +260,9 @@ class TrendingCard extends StatelessWidget {
                                     const Color.fromRGBO(255, 255, 255, 0.16),
                                 borderRadius: BorderRadius.circular(5),
                                 border: Border.all(color: Colors.grey[700]!)),
-                            child: const Row(
+                            child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Icon(
                                   Icons.star,
                                   color: Colors.orange,
@@ -291,10 +290,10 @@ class TrendingCard extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(15),
+          Padding(
+            padding: const EdgeInsets.all(15),
             child: Row(
-              children: [
+              children: const [
                 Text(
                   '₹11,499',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
@@ -326,8 +325,8 @@ class SearchBox extends StatelessWidget {
                   topLeft: Radius.circular(15),
                   bottomLeft: Radius.circular(15)),
               border: Border.all(color: Colors.grey)),
-          child: const Row(
-            children: [
+          child: Row(
+            children: const [
               SizedBox(
                 width: 290,
                 child: TextField(

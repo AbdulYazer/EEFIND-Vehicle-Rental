@@ -262,10 +262,10 @@ class PropertiesCard extends StatelessWidget {
                                         borderRadius: BorderRadius.circular(5),
                                         border: Border.all(
                                             color: Colors.grey[700]!)),
-                                    child: const Row(
+                                    child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
-                                      children: [
+                                      children: const [
                                         Icon(
                                           Icons.star,
                                           color: Colors.orange,
@@ -300,10 +300,10 @@ class PropertiesCard extends StatelessWidget {
                                         borderRadius: BorderRadius.circular(5),
                                         border: Border.all(
                                             color: Colors.grey[700]!)),
-                                    child: const Row(
+                                    child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
-                                      children: [
+                                      children: const [
                                         Icon(
                                           Icons.location_on,
                                           color: Colors.orange,
@@ -335,13 +335,13 @@ class PropertiesCard extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.all(15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
-                      children: [
+                      children: const [
                         Text(
                           '₹11,499',
                           style: TextStyle(
@@ -351,7 +351,7 @@ class PropertiesCard extends StatelessWidget {
                       ],
                     ),
                     Row(
-                      children: [
+                      children: const [
                         Icon(
                           Icons.pets,
                           size: 10,
@@ -377,8 +377,8 @@ class PropertiesCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(25)),
                   height: 30,
                   width: 180,
-                  child: const Row(
-                    children: [
+                  child: Row(
+                    children: const [
                       SizedBox(
                         width: 10,
                       ),
